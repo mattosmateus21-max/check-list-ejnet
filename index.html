@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Checklist EjNet</h1>
+    </header>
+    <div id="tela-login" class="area-login">
+    <div class="card-login">
+        <h2>Identificação do Técnico</h2>
+        <p>Insira seu nome para acessar os checklists:</p>
+        <input type="text" id="nomeUsuario" placeholder="Digite seu nome completo">
+        <button id="btnEntrar">Acessar Sistema</button>
+    </div>
+</div>
+   <button class="btn-motocrosser" id="btnMotoCrosser">Crosser</button>
+   <div id="checklist-moto" class="secao-checklist">
+    <h3>Checklist Crosser</h3>
+    <div class="Info-impressao">
+        <p><strong>Técnico:</strong> <span class="txt-tecnico">---</span></p>
+        <p><strong>Data/Hora:</strong> <span class="txt-data-hora">---</span></p>
+    </div>
+    <img src="imagens/crosser.webp" alt="crosser" class="imagen-crosser">
+    <ul>
+        <li>
+            <span>Óleo</span>  
+            <!-- Opção Sim (Não abre caixa) -->
+        <input type="radio" id="sim" name="status" value="Sim" onclick="toggleObservacao(false)">
+        <label for="sim">Sim</label>
+
+  <!-- Opção Não (Abre a caixa) -->
+        <input type="radio" id="nao" name="status" value="Não" onclick="toggleObservacao  (true)">
+        <label for="nao">Não</label>
+  
+  <!-- Área de texto (Inicia escondida) -->
+        <div id="campo-observacao" class="campo-observacao">
+        <label for="obs"><strong>Relate o problema:</strong></label><br>
+        <textarea id="obs" name="observacao" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+        </div>
+        </li>
+        <li>
+            <span>Freios</span>
+            <label><input type="radio" name="freios" value="Sim"> Sim</label>
+            <label><input type="radio" name="freios" value="Não"> Não</label>
+        </li>
+        <li>
+            <span>Pneus</span>
+            <label><input type="radio" name="pneus" value="Sim"> Sim</label>
+            <label><input type="radio" name="pneus" value="Não"> Não</label>
+        </li>
+    </ul>
+    <button class="btn-salvar" id="btnSalvarMoto">Salvar</button>
+   </div>
+
+   <button class="btn-equipamentos" id="btnEquipamentos">Equipamentos</button>
+   <div id="checklist-equipamentos" class="secao-checklist">
+    <h3>Equipamentos do Carro</h3>
+    <div class="Info-impressao">
+        <p><strong>Técnico:</strong> <span class="txt-tecnico">---</span></p>
+        <p><strong>Data/Hora:</strong> <span class="txt-data-hora">---</span></p>
+    </div>
+    <ul>
+        <li>
+            <span>Arame</span>
+            <label><input type="radio" name="arame" value="Sim"> Sim</label>
+            <label><input type="radio" name="arame" value="Não"> Não</label>
+        </li>
+        <li>
+            <span>Abraçadeira</span>
+            <label><input type="radio" name="abracadeira" value="Sim"> Sim</label>
+            <label><input type="radio" name="abracadeira" value="Não"> Não</label>
+        </li>
+        <li>
+            <span>Bucha</span>
+            <label><input type="radio" name="bucha" value="Sim"> Sim</label>
+            <label><input type="radio" name="bucha" value="Não"> Não</label>
+        </li>
+        <li>
+            <span>Cabo Drop</span>
+            <label><input type="radio" name="drop" value="Sim"> Sim</label>
+            <label><input type="radio" name="drop" value="Não"> Não</label>
+        </li>
+        <li>
+            <span>Cabo UTP</span>
+            <label><input type="radio" name="UTP" value="Sim"> Sim</label>
+            <label><input type="radio" name="UTP" value="Não"> Não</label>
+        </li>
+        <li>
+            <span>Conectores APC</span>
+            <label><input type="radio" name="conectores" value="Sim"> Sim</label>
+            <label><input type="radio" name="conectores" value="Não"> Não</label>
+        </li>
+        <li>
+            <span>Conector RJ45</span>
+            <label><input type="radio" name="rj45" value="Sim"> Sim</label>
+            <label><input type="radio" name="rj45" value="Não"> Não</label>
+        </li>
+        <li>
+            <span>Chaves</span>
+            <label><input type="radio" name="chaves" value="Sim"> Sim</label>
+            <label><input type="radio" name="chaves" value="Não"> Não</label>
+        </li>
+        <li>
+            <span>Esticadores</span>
+            <label><input type="radio" name="esticadores" value="Sim"> Sim</label>
+            <label><input type="radio" name="esticadores" value="Não"> Não</label>
+        </li>
+        <li>
+            <span>Extensão</span>
+            <label><input type="radio" name="extensao" value="Sim"> Sim</label>
+            <label><input type="radio" name="extensao" value="Não"> Não</label>
+        </li>
+        <li>
+            <span>Fita Isolante</span>
+            <label><input type="radio" name="fitaisolante" value="Sim"> Sim</label>
+            <label><input type="radio" name="fitaisolante" value="Não"> Não</label>
+        </li>
+        <li>
+            <span>Fixa-Fio</span>
+            <label><input type="radio" name="fixafio" value="Sim"> Sim</label>
+            <label><input type="radio" name="fixafio" value="Não"> Não</label>
+        </li>
+        <li>
+            <span>Martelete</span>
+            <label><input type="radio" name="martelete" value="Sim"> Sim</label>
+            <label><input type="radio" name="martelete" value="Não"> Não</label>
+        </li>
+        <li>
+            <span>Parafusos</span>
+            <label><input type="radio" name="parafusos" value="Sim"> Sim</label>
+            <label><input type="radio" name="parafusos" value="Não"> Não</label>
+        </li>
+        <li>
+            <span>PassaFio</span>
+            <label><input type="radio" name="passafio" value="Sim"> Sim</label>
+            <label><input type="radio" name="passafio" value="Não"> Não</label>
+        </li>
+    </ul>
+    <!-- Botão para disparar o salvamento via JS futuramente -->
+     <button class="btn-salvar" id="btnSalvarEquipamentos">Salvar</button>
+   </div>
+   <script src="script.js"></script>
+</body>
+</html>
