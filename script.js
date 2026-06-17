@@ -1,44 +1,42 @@
 // ==========================================================
 // 1. INICIALIZAÇÃO E CONTROLE DE LOGIN (NETLIFY IDENTITY)
 // ==========================================================
-netlifyIdentity.init();
+// Garante que o motor do Netlify existe antes de iniciar
+if (typeof netlifyIdentity !== 'undefined') {
+    netlifyIdentity.init();
 
-// Verifica o usuário do Netlify assim que a página carrega
-const usuarioAtual = netlifyIdentity.currentUser();
-const telaLogin = document.getElementById('tela-login');
+    const usuarioAtual = netlifyIdentity.currentUser();
+    const telaLogin = document.getElementById('tela-login');
 
-if (!usuarioAtual) {
-    netlifyIdentity.open(); // Abre a caixinha do Netlify se não estiver logado
-    if (telaLogin) telaLogin.style.display = 'block'; // Garante que a tela de fundo bloqueie
+    if (!usuarioAtual) {
+        netlifyIdentity.open(); // Abre a caixinha do Netlify
+        if (telaLogin) telaLogin.style.display = 'block'; 
+    } else {
+        if (telaLogin) telaLogin.style.display = 'none';
+        configurarNomeTecnico(usuarioAtual.email);
+    }
+
+    // Ouvintes de eventos do Netlify
+    netlifyIdentity.on('login', (user) => {
+        console.log('Funcionário logado:', user.email);
+        netlifyIdentity.close(); 
+        if (telaLogin) telaLogin.style.display = 'none'; 
+        configurarNomeTecnico(user.email);
+    });
+
+    netlifyIdentity.on('logout', () => {
+        sessionStorage.clear();
+        window.location.reload(); 
+    });
 } else {
-    // Se já estiver logado, esconde a tela de login antiga e joga o e-mail na sessão para o PDF
-    if (telaLogin) telaLogin.style.display = 'none';
-    configurarNomeTecnico(usuarioAtual.email);
+    console.error("Erro: A biblioteca do Netlify Identity não foi carregada no HTML.");
 }
 
-// O que acontece quando o funcionário faz o login com sucesso
-netlifyIdentity.on('login', (user) => {
-    console.log('Funcionário logado:', user.email);
-    netlifyIdentity.close(); // Fecha a caixinha cinza do Netlify
-    
-    if (telaLogin) telaLogin.style.display = 'none'; // Esconde a tela de fundo antiga
-    configurarNomeTecnico(user.email); // Salva o e-mail/nome para o PDF
-});
-
-// O que acontece se o funcionário deslogar
-netlifyIdentity.on('logout', () => {
-    sessionStorage.clear();
-    window.location.reload(); 
-});
-
-// Função auxiliar para tratar o e-mail e salvar na sessão do seu relatório
 function configurarNomeTecnico(email) {
-    // Pega a parte antes do @ (ex: "joao.silva@gmail.com" vira "joao.silva") e deixa em maiúsculo
+    if (!email) return;
     let nomeTratado = email.split('@')[0].replace('.', ' ').toUpperCase();
     sessionStorage.setItem('usuarioLogado', nomeTratado);
 }
-
-
 // ==========================================================
 // FUNÇÃO GENÉRICA PARA ABRIR / FECHAR OS CHECKLISTS
 // ==========================================================
