@@ -36,7 +36,8 @@ function setupChecklist(idBotao, idChecklist) {
     }
 }
 setupChecklist('btnEquipamentos', 'checklist-equipamentos');
-setupChecklist('btnMotoCrosser', 'checklist-moto');
+setupChecklist('btnMotoCrosser', 'checklist-motocrosser');
+setupChecklist('btnMotoFactor', 'checklist-motofactor');
 
 
 // ==========================================================
@@ -96,26 +97,34 @@ function gerenciarSalvamento(idBotaoSalvar, idConfigSecao, chaveArmazenamento) {
         console.log(`Salvo em [${chaveArmazenamento}]:`, dadosChecklist);
         
         // ==========================================================
-        // FLUXO CORRIGIDO: IMPRESSÃO NATIVA + REDIRECIONAMENTO
+        // FLUXO DE IMPRESSÃO: MOSTRA APENAS A SEÇÃO ATIVA
         // ==========================================================
-        
-        // 1. Abre a tela de impressão nativa do aparelho (que gera o PDF bonito)
-        window.print();
+        imprimirChecklist();
 
         // 2. Configura o WhatsApp
         const numeroWhatsapp = "5587991683831"; // <-- Substitua pelo seu número com DDD
         const textoMensagem = `Olá! Segue o Checklist (${idConfigSecao}) preenchido por *${tecnico}* em ${dataFormatada} às ${horaFormatada}. Já gerei o PDF pelo sistema.`;
         const linkWhatsapp = `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(textoMensagem)}`;
 
-        // 3. Aguarda 1 segundo para dar tempo do sistema fechar a janela de impressão e joga pro WhatsApp
+        // 3. Aguarda 10 segundos para dar tempo do sistema fechar a janela de impressão e joga pro WhatsApp
         setTimeout(() => {
             window.location.href = linkWhatsapp;
         }, 10000); // Aumentei para 10 segundos para garantir que o PDF seja gerado e a janela de impressão seja fechada
     });
 }
+
+function imprimirChecklist() {
+    document.body.classList.add('imprimir-apenas-checklist');
+    window.print();
+}
+
+window.addEventListener('afterprint', () => {
+    document.body.classList.remove('imprimir-apenas-checklist');
+});
 // Configuração do salvamento independente para cada botão
 gerenciarSalvamento('btnSalvarEquipamentos', 'checklist-equipamentos', 'dadosEquipamentos');
-gerenciarSalvamento('btnSalvarMoto', 'checklist-moto', 'dadosMoto');
+gerenciarSalvamento('btnSalvarCrosser', 'checklist-motocrosser', 'dadosCrosser');
+gerenciarSalvamento('btnSalvarFactor', 'checklist-motofactor', 'dadosFactor');
 
 function toggleObservacao(radioEl, exibir) {
     if (!radioEl) return;
@@ -125,3 +134,22 @@ function toggleObservacao(radioEl, exibir) {
     if (!caixa) return;
     caixa.style.display = exibir ? 'block' : 'none';
 }
+// 1. Inicializa o motor de login do Netlify
+netlifyIdentity.init();
+
+// 2. Verifica se o funcionário já está logado. Se não estiver, abre a caixinha
+const usuarioAtual = netlifyIdentity.currentUser();
+if (!usuarioAtual) {
+    netlifyIdentity.open(); 
+}
+
+// 3. O que acontece quando o funcionário digita o login correto
+netlifyIdentity.on('login', (user) => {
+    console.log('Funcionário logado:', user.email);
+    netlifyIdentity.close(); // Fecha a caixinha de login e libera o site
+});
+
+// 4. O que acontece se o funcionário deslogar
+netlifyIdentity.on('logout', () => {
+    window.location.reload(); // Recarrega a página para travar a tela de novo
+});

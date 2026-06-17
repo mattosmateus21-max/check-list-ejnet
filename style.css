@@ -44,7 +44,6 @@ footer {
     transition: background-color 0.2s ease;
     width: 150px;
 }
-
 .btn-equipamentos:hover {
     background-color: #0056b3;
 }
@@ -61,6 +60,21 @@ footer {
 }
 .btn-motocrosser:hover {
     background-color: #28a745;
+}
+
+.btn-motofactor {
+    background-color: rgb(16, 22, 16);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+.btn-motofactor:hover {
+    background-color: #0d150f;
 }
 
 /*Seção do checklist - Escondida por padrão*/
@@ -124,10 +138,9 @@ footer {
     }
     
     /* Esconde o que não deve ir para o PDF */
-    #tela-login, .btn-motocrosser, .btn-equipamentos, .btn-salvar {
+    #tela-login, .btn-motocrosser, .btn-equipamentos, .btn-salvar, .btn-motofactor, .imagen-crosser, header, footer {
         display: none !important;
     }
-    
     .secao-checklist {
         width: 100% !important;
         max-width: 100% !important;
@@ -190,11 +203,39 @@ footer {
     border-radius: 4px;
 }
 .imagen-crosser {
-    width: 200px;
+    max-width: 100%;
+    display: block;
     height: auto;
-    align-content: center;
+}
+.imagen-factor {
+    max-width: 100%;
+    display: block; /* mostrar a imagem principal na tela */
+    height: auto;
+}
+
+/* Mostrar a imagem interna do checklist apenas durante a impressão
+   quando o script adicionar a classe que ativa a impressão da seção */
+@media print {
+    body.imprimir-apenas-checklist .imagem-factor125 .imagem-crosser150 {
+        display: block !important;
+        max-width: 100% !important;
+        height: auto !important;
+    }
+}
+.imagem-crosser150 {
+    width: 100%;
+    display: none;
+}
+.imagem-factor125{
+    width: 100%;
+    display: none; /* ocultar dentro do checklist na tela */
 }
 .campo-observacao {
     display: none;
     margin-bottom: 15px;
+}
+/* O container precisa ser relative para que o texto não suma da tela */
+.container-imagem {
+    position: relative;
+    display: inline-block; /* faz o div ter o tamanho exato da imagem */
 }

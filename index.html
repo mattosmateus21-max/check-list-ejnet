@@ -7,6 +7,7 @@
     <title>Checklist</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
     <header>
@@ -20,14 +21,18 @@
         <button id="btnEntrar">Acessar Sistema</button>
     </div>
 </div>
-   <button class="btn-motocrosser" id="btnMotoCrosser">Crosser</button>
-   <div id="checklist-moto" class="secao-checklist">
+<!-- Botão crosser e Adicionais-->
+   <button class="btn-motocrosser" id="btnMotoCrosser">Crosser 150</button>
+   <div class="container-imagem">
+   <img src="imagens/crosser.webp" alt="crosser 150" class="imagen-crosser">
+   </div>
+   <div id="checklist-motocrosser" class="secao-checklist">
     <h3>Checklist Crosser</h3>
+    <img src="imagens/crosser.webp" alt="crosser 150" class="imagem-crosser150">
     <div class="Info-impressao">
         <p><strong>Técnico:</strong> <span class="txt-tecnico">---</span></p>
         <p><strong>Data/Hora:</strong> <span class="txt-data-hora">---</span></p>
     </div>
-    <img src="imagens/crosser.webp" alt="crosser" class="imagen-crosser">
     <ul>
         <li>
             <span>Óleo</span>
@@ -120,9 +125,115 @@
             </div>
         </li>
     </ul>
-    <button class="btn-salvar" id="btnSalvarMoto">Salvar</button>
+    <button class="btn-salvar" id="btnSalvarCrosser">Salvar</button>
    </div>
+<!--Botão factor 125 e adicionais-->
+<button class="btn-motofactor" id="btnMotoFactor">Factor 125</button>
+   <div class="container-imagem">
+   <img src="imagens/factor.webp" alt="factor 125" class="imagen-factor">
+   </div>
+   <div id="checklist-motofactor" class="secao-checklist">
+    <h3>Checklist Factor</h3>
+    <img src="imagens/factor.webp" alt="factor 125" class="imagem-factor125"> 
+    <div class="Info-impressao">
+        <p><strong>Técnico:</strong> <span class="txt-tecnico">---</span></p>
+        <p><strong>Data/Hora:</strong> <span class="txt-data-hora">---</span></p>
+    </div>
+    <ul>
+        <li>
+            <span>Óleo</span>
+            <label><input type="radio" name="oleo" value="Sim" onclick="toggleObservacao(this,false)"> Sim</label>
+            <label><input type="radio" name="oleo" value="Não" onclick="toggleObservacao(this,true)"> Não</label>
 
+            <div class="campo-observacao">
+                <label><strong>Relate o problema:</strong></label><br>
+                <textarea name="observacao_oleo" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+            </div>
+        </li>
+        <li>
+            <span>Freios</span>
+            <label><input type="radio" name="freios" value="Sim" onclick="toggleObservacao(this,false)"> Sim</label>
+            <label><input type="radio" name="freios" value="Não" onclick="toggleObservacao(this,true)"> Não</label>
+
+            <div class="campo-observacao">
+                <label><strong>Relate o problema:</strong></label><br>
+                <textarea name="observacao_freios" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+            </div>
+        </li>
+        <li>
+            <span>Pneus</span>
+            <label><input type="radio" name="pneus" value="Sim" onclick="toggleObservacao(this,false)"> Sim</label>
+            <label><input type="radio" name="pneus" value="Não" onclick="toggleObservacao(this,true)"> Não</label>
+
+            <div class="campo-observacao">
+                <label><strong>Relate o problema:</strong></label><br>
+                <textarea name="observacao_pneus" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+            </div>
+        </li>
+        <li>
+            <span>Transmissão</span>
+            <label><input type="radio" name="transmissao" value="Sim" onclick="toggleObservacao(this,false)"> Sim</label>
+            <label><input type="radio" name="transmissao" value="Não" onclick="toggleObservacao(this,true)"> Não</label>
+
+            <div class="campo-observacao">
+                <label><strong>Relate o problema:</strong></label><br>
+                <textarea name="observacao_transmissao" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+            </div>
+        </li>
+        <li>
+            <span>Retrovisores</span>
+            <label><input type="radio" name="retrovisores" value="Sim" onclick="toggleObservacao(this,false)"> Sim</label>
+            <label><input type="radio" name="retrovisores" value="Não" onclick="toggleObservacao(this,true)"> Não</label>
+
+            <div class="campo-observacao">
+                <label><strong>Relate o problema:</strong></label><br>
+                <textarea name="observacao_retrovisores" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+            </div>
+        </li>
+        <li>
+            <span>Setas</span>
+            <label><input type="radio" name="setas" value="Sim" onclick="toggleObservacao(this,false)"> Sim</label>
+            <label><input type="radio" name="setas" value="Não" onclick="toggleObservacao(this,true)"> Não</label>
+
+            <div class="campo-observacao">
+                <label><strong>Relate o problema:</strong></label><br>
+                <textarea name="observacao_setas" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+            </div>
+        </li>
+        <li>
+            <span>Buzina</span>
+            <label><input type="radio" name="buzina" value="Sim" onclick="toggleObservacao(this,false)"> Sim</label>
+            <label><input type="radio" name="buzina" value="Não" onclick="toggleObservacao(this,true)"> Não</label>
+
+            <div class="campo-observacao">
+                <label><strong>Relate o problema:</strong></label><br>
+                <textarea name="observacao_buzina" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+            </div>
+        </li>
+        <li>
+            <span>Capacete</span>
+            <label><input type="radio" name="capacete" value="Sim" onclick="toggleObservacao(this,false)"> Sim</label>
+            <label><input type="radio" name="capacete" value="Não" onclick="toggleObservacao(this,true)"> Não</label>
+
+            <div class="campo-observacao">
+                <label><strong>Relate o problema:</strong></label><br>
+                <textarea name="observacao_capacete" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+            </div>
+        </li>
+        <li>
+            <span>Capa</span>
+            <label><input type="radio" name="capa" value="Sim" onclick="toggleObservacao(this,false)"> Sim</label>
+            <label><input type="radio" name="capa" value="Não" onclick="toggleObservacao(this,true)"> Não</label>
+
+            <div class="campo-observacao">
+                <label><strong>Relate o problema:</strong></label><br>
+                <textarea name="observacao_capa" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+            </div>
+        </li>
+    </ul>
+    <button class="btn-salvar" id="btnSalvarFactor">Salvar</button>
+   </div>
+   <!--Botão equipamentos e adicionais-->
    <button class="btn-equipamentos" id="btnEquipamentos">Equipamentos</button>
    <div id="checklist-equipamentos" class="secao-checklist">
     <h3>Equipamentos do Carro</h3>
