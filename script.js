@@ -1,42 +1,28 @@
-// ==========================================================
-// CONTROLADOR DE LOGIN CONECTADO AO NETLIFY IDENTITY
-// ==========================================================
-if (typeof netlifyIdentity !== 'undefined') {
-    netlifyIdentity.init();
+script antigo
 
-    const usuarioAtual = netlifyIdentity.currentUser();
-    const telaLogin = document.getElementById('tela-login');
+// ==========================================================
+// CONTROLADOR DE LOGIN (Guarda o usuário na sessão)
+// ==========================================================
+const telaLogin = document.getElementById('tela-login');
+const btnEntrar = document.getElementById('btnEntrar');
+const inputNome = document.getElementById('nomeUsuario');
 
-    // Se não estiver logado no Netlify, força a abertura do modal cinza
-    if (!usuarioAtual) {
-        netlifyIdentity.open(); 
-        if (telaLogin) telaLogin.style.display = 'block'; 
-    } else {
-        // Se já estiver logado, esconde o fundo antigo e configura o nome para o PDF
-        if (telaLogin) telaLogin.style.display = 'none';
-        configurarNomeTecnico(usuarioAtual.email);
+// Verifica se o usuário já logou antes para não pedir o nome toda hora
+if (sessionStorage.getItem('usuarioLogado')) {
+    telaLogin.style.display = 'none';
+}
+
+btnEntrar.addEventListener('click', () => {
+    const nome = inputNome.value.trim();
+    if (nome === "") {
+        alert("Por favor, digite seu nome antes de entrar.");
+        return;
     }
+    // Salva o nome apenas enquanto a aba do navegador estiver aberta
+    sessionStorage.setItem('usuarioLogado', nome);
+    telaLogin.style.display = 'none'; // Esconde a tela de login
+});
 
-    // Evento disparado quando o funcionário faz login
-    netlifyIdentity.on('login', (user) => {
-        netlifyIdentity.close(); 
-        if (telaLogin) telaLogin.style.display = 'none'; 
-        configurarNomeTecnico(user.email);
-    });
-
-    // Evento disparado quando desloga
-    netlifyIdentity.on('logout', () => {
-        sessionStorage.clear();
-        window.location.reload(); 
-    });
-}
-
-// Transforma o e-mail do Netlify no nome do relatório (ex: mateus.silva@gmail.com -> MATEUS SILVA)
-function configurarNomeTecnico(email) {
-    if (!email) return;
-    let nomeTratado = email.split('@')[0].replace('.', ' ').toUpperCase();
-    sessionStorage.setItem('usuarioLogado', nomeTratado);
-}
 
 // ==========================================================
 // FUNÇÃO GENÉRICA PARA ABRIR / FECHAR OS CHECKLISTS
@@ -66,7 +52,7 @@ function gerenciarSalvamento(idBotaoSalvar, idConfigSecao, chaveArmazenamento) {
     if (!btnSalvar || !secaoChecklist) return;
 
     btnSalvar.addEventListener('click', () => {
-        // Recupera o nome mapeado pelo login do Netlify
+        // Recupera o nome de quem está logado
         const tecnico = sessionStorage.getItem('usuarioLogado') || "Não identificado";
 
         // 1. Descobre os campos de rádio da seção
@@ -112,18 +98,20 @@ function gerenciarSalvamento(idBotaoSalvar, idConfigSecao, chaveArmazenamento) {
 
         console.log(`Salvo em [${chaveArmazenamento}]:`, dadosChecklist);
         
-        // Fluxo de Impressão
+        // ==========================================================
+        // FLUXO DE IMPRESSÃO: MOSTRA APENAS A SEÇÃO ATIVA
+        // ==========================================================
         imprimirChecklist();
 
-        // Configura o WhatsApp
-        const numeroWhatsapp = "5587991683831"; 
+        // 2. Configura o WhatsApp
+        const numeroWhatsapp = "5587991683831"; // <-- Substitua pelo seu número com DDD
         const textoMensagem = `Olá! Segue o Checklist (${idConfigSecao}) preenchido por *${tecnico}* em ${dataFormatada} às ${horaFormatada}. Já gerei o PDF pelo sistema.`;
         const linkWhatsapp = `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(textoMensagem)}`;
 
-        // Aguarda 10 segundos para dar tempo do sistema fechar a janela de impressão e joga pro WhatsApp
+        // 3. Aguarda 10 segundos para dar tempo do sistema fechar a janela de impressão e joga pro WhatsApp
         setTimeout(() => {
             window.location.href = linkWhatsapp;
-        }, 10000); 
+        }, 10000); // Aumentei para 10 segundos para garantir que o PDF seja gerado e a janela de impressão seja fechada
     });
 }
 
@@ -135,7 +123,6 @@ function imprimirChecklist() {
 window.addEventListener('afterprint', () => {
     document.body.classList.remove('imprimir-apenas-checklist');
 });
-
 // Configuração do salvamento independente para cada botão
 gerenciarSalvamento('btnSalvarEquipamentos', 'checklist-equipamentos', 'dadosEquipamentos');
 gerenciarSalvamento('btnSalvarCrosser', 'checklist-motocrosser', 'dadosCrosser');
@@ -149,3 +136,22 @@ function toggleObservacao(radioEl, exibir) {
     if (!caixa) return;
     caixa.style.display = exibir ? 'block' : 'none';
 }
+// 1. Inicializa o motor de login do Netlify
+netlifyIdentity.init();
+
+// 2. Verifica se o funcionário já está logado. Se não estiver, abre a caixinha
+const usuarioAtual = netlifyIdentity.currentUser();
+if (!usuarioAtual) {
+    netlifyIdentity.open(); 
+}
+
+// 3. O que acontece quando o funcionário digita o login correto
+netlifyIdentity.on('login', (user) => {
+    console.log('Funcionário logado:', user.email);
+    netlifyIdentity.close(); // Fecha a caixinha de login e libera o site
+});
+
+// 4. O que acontece se o funcionário deslogar
+netlifyIdentity.on('logout', () => {
+    window.location.reload(); // Recarrega a página para travar a tela de novo
+});
