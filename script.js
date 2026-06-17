@@ -117,11 +117,11 @@ function gerenciarSalvamento(idBotaoSalvar, idConfigSecao, chaveArmazenamento) {
 gerenciarSalvamento('btnSalvarEquipamentos', 'checklist-equipamentos', 'dadosEquipamentos');
 gerenciarSalvamento('btnSalvarMoto', 'checklist-moto', 'dadosMoto');
 
-function toggleObservacao(exibir) {
-  var caixa = document.getElementById("campo-observacao");
-  if (exibir) {
-    caixa.style.display = "block"; // Mostra a caixa
-  } else {
-    caixa.style.display = "none";  // Esconde a caixa
-  }
+function toggleObservacao(radioEl, exibir) {
+    if (!radioEl) return;
+    var li = radioEl.closest('li');
+    if (!li) return;
+    var caixa = li.querySelector('.campo-observacao');
+    if (!caixa) return;
+    caixa.style.display = exibir ? 'block' : 'none';
 }

@@ -1,8 +1,12 @@
+html {
+    min-height: 100%;
+}
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     margin: 0; padding: 0;
     display: flex; flex-direction: column; align-items: center;
+    min-height: 100vh;
     width: 100%;
 }
 header {
@@ -14,6 +18,17 @@ header {
     border-radius: 8px;
     width: 100%;
     text-align: center;
+}
+
+footer {
+    width: 100%;
+    margin-top: auto;
+    padding: 12px 0;
+    background-color: #f36804;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilo do botão*/
@@ -155,8 +170,9 @@ header {
     border-radius: 4px;
 }
 .imagen-crosser {
-    width: 100%;
+    width: 200px;
     height: auto;
+    align-content: center;
 }
 .campo-observacao {
     display: none;
