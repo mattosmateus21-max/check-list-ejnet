@@ -1,4 +1,3 @@
-script antigo
 
 // ==========================================================
 // CONTROLADOR DE LOGIN (Guarda o usuário na sessão)
