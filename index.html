@@ -133,78 +133,153 @@
     <ul>
         <li>
             <span>Arame</span>
-            <label><input type="radio" name="arame" value="Sim"> Sim</label>
-            <label><input type="radio" name="arame" value="Não"> Não</label>
+            <label><input type="radio" name="arame" value="Sim" onclick="toggleObservacao(this,false)"> Sim</label>
+            <label><input type="radio" name="arame" value="Não" onclick="toggleObservacao(this,true)"> Não</label>
+
+            <div class="campo-observacao">
+                <label><strong>Relate o problema:</strong></label><br>
+                <textarea name="observacao_arame" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+            </div>
         </li>
         <li>
             <span>Abraçadeira</span>
-            <label><input type="radio" name="abracadeira" value="Sim"> Sim</label>
-            <label><input type="radio" name="abracadeira" value="Não"> Não</label>
+            <label><input type="radio" name="abracadeira" value="Sim" onclick="toggleObservacao(this,false)"> Sim</label>
+            <label><input type="radio" name="abracadeira" value="Não" onclick="toggleObservacao(this,true)"> Não</label>
+
+            <div class="campo-observacao">
+                <label><strong>Relate o problema:</strong></label><br>
+                <textarea name="observacao_abracadeira" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+            </div>
         </li>
         <li>
             <span>Bucha</span>
-            <label><input type="radio" name="bucha" value="Sim"> Sim</label>
-            <label><input type="radio" name="bucha" value="Não"> Não</label>
+            <label><input type="radio" name="bucha" value="Sim" onclick="toggleObservacao(this,false)"> Sim</label>
+            <label><input type="radio" name="bucha" value="Não" onclick="toggleObservacao(this,true)"> Não</label>
+
+            <div class="campo-observacao">
+                <label><strong>Relate o problema:</strong></label><br>
+                <textarea name="observacao_bucha" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+            </div>
         </li>
         <li>
             <span>Cabo Drop</span>
-            <label><input type="radio" name="drop" value="Sim"> Sim</label>
-            <label><input type="radio" name="drop" value="Não"> Não</label>
+            <label><input type="radio" name="cabodrop" value="Sim" onclick="toggleObservacao(this,false)"> Sim</label>
+            <label><input type="radio" name="cabodrop" value="Não" onclick="toggleObservacao(this,true)"> Não</label>
+
+            <div class="campo-observacao">
+                <label><strong>Relate o problema:</strong></label><br>
+                <textarea name="observacao_cabodrop" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+            </div>
         </li>
         <li>
             <span>Cabo UTP</span>
-            <label><input type="radio" name="UTP" value="Sim"> Sim</label>
-            <label><input type="radio" name="UTP" value="Não"> Não</label>
+            <label><input type="radio" name="caboutp" value="Sim" onclick="toggleObservacao(this,false)"> Sim</label>
+            <label><input type="radio" name="caboutp" value="Não" onclick="toggleObservacao(this,true)"> Não</label>
+
+            <div class="campo-observacao">
+                <label><strong>Relate o problema:</strong></label><br>
+                <textarea name="observacao_caboutp" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+            </div>
         </li>
         <li>
             <span>Conectores APC</span>
-            <label><input type="radio" name="conectores" value="Sim"> Sim</label>
-            <label><input type="radio" name="conectores" value="Não"> Não</label>
+            <label><input type="radio" name="conectoresapc" value="Sim" onclick="toggleObservacao(this,false)"> Sim</label>
+            <label><input type="radio" name="conectoresapc" value="Não" onclick="toggleObservacao(this,true)"> Não</label>
+
+            <div class="campo-observacao">
+                <label><strong>Relate o problema:</strong></label><br>
+                <textarea name="observacao_conectoresapc" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+            </div>
         </li>
         <li>
             <span>Conector RJ45</span>
-            <label><input type="radio" name="rj45" value="Sim"> Sim</label>
-            <label><input type="radio" name="rj45" value="Não"> Não</label>
+            <label><input type="radio" name="conectorrj45" value="Sim" onclick="toggleObservacao(this,false)"> Sim</label>
+            <label><input type="radio" name="conectorrj45" value="Não" onclick="toggleObservacao(this,true)"> Não</label>
+
+            <div class="campo-observacao">
+                <label><strong>Relate o problema:</strong></label><br>
+                <textarea name="observacao_conectorrj45" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+            </div>
         </li>
         <li>
             <span>Chaves</span>
-            <label><input type="radio" name="chaves" value="Sim"> Sim</label>
-            <label><input type="radio" name="chaves" value="Não"> Não</label>
+            <label><input type="radio" name="chaves" value="Sim" onclick="toggleObservacao(this,false)"> Sim</label>
+            <label><input type="radio" name="chaves" value="Não" onclick="toggleObservacao(this,true)"> Não</label>
+
+            <div class="campo-observacao">
+                <label><strong>Relate o problema:</strong></label><br>
+                <textarea name="observacao_chaves" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+            </div>
         </li>
         <li>
             <span>Esticadores</span>
-            <label><input type="radio" name="esticadores" value="Sim"> Sim</label>
-            <label><input type="radio" name="esticadores" value="Não"> Não</label>
+            <label><input type="radio" name="esticadores" value="Sim" onclick="toggleObservacao(this,false)"> Sim</label>
+            <label><input type="radio" name="esticadores" value="Não" onclick="toggleObservacao(this,true)"> Não</label>
+
+            <div class="campo-observacao">
+                <label><strong>Relate o problema:</strong></label><br>
+                <textarea name="observacao_esticadores" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+            </div>
         </li>
         <li>
             <span>Extensão</span>
-            <label><input type="radio" name="extensao" value="Sim"> Sim</label>
-            <label><input type="radio" name="extensao" value="Não"> Não</label>
+            <label><input type="radio" name="extensao" value="Sim" onclick="toggleObservacao(this,false)"> Sim</label>
+            <label><input type="radio" name="extensao" value="Não" onclick="toggleObservacao(this,true)"> Não</label>
+
+            <div class="campo-observacao">
+                <label><strong>Relate o problema:</strong></label><br>
+                <textarea name="observacao_extensao" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+            </div>
         </li>
         <li>
             <span>Fita Isolante</span>
-            <label><input type="radio" name="fitaisolante" value="Sim"> Sim</label>
-            <label><input type="radio" name="fitaisolante" value="Não"> Não</label>
+            <label><input type="radio" name="fitaisolante" value="Sim" onclick="toggleObservacao(this,false)"> Sim</label>
+            <label><input type="radio" name="fitaisolante" value="Não" onclick="toggleObservacao(this,true)"> Não</label>
+
+            <div class="campo-observacao">
+                <label><strong>Relate o problema:</strong></label><br>
+                <textarea name="observacao_fitaisolante" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+            </div>
         </li>
         <li>
-            <span>Fixa-Fio</span>
-            <label><input type="radio" name="fixafio" value="Sim"> Sim</label>
-            <label><input type="radio" name="fixafio" value="Não"> Não</label>
+            <span>Fixa Fio</span>
+            <label><input type="radio" name="fixafio" value="Sim" onclick="toggleObservacao(this,false)"> Sim</label>
+            <label><input type="radio" name="fixafio" value="Não" onclick="toggleObservacao(this,true)"> Não</label>
+
+            <div class="campo-observacao">
+                <label><strong>Relate o problema:</strong></label><br>
+                <textarea name="observacao_fixafio" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+            </div>
         </li>
         <li>
             <span>Martelete</span>
-            <label><input type="radio" name="martelete" value="Sim"> Sim</label>
-            <label><input type="radio" name="martelete" value="Não"> Não</label>
+            <label><input type="radio" name="martelete" value="Sim" onclick="toggleObservacao(this,false)"> Sim</label>
+            <label><input type="radio" name="martelete" value="Não" onclick="toggleObservacao(this,true)"> Não</label>
+
+            <div class="campo-observacao">
+                <label><strong>Relate o problema:</strong></label><br>
+                <textarea name="observacao_martelete" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+            </div>
         </li>
         <li>
             <span>Parafusos</span>
-            <label><input type="radio" name="parafusos" value="Sim"> Sim</label>
-            <label><input type="radio" name="parafusos" value="Não"> Não</label>
+            <label><input type="radio" name="parafusos" value="Sim" onclick="toggleObservacao(this,false)"> Sim</label>
+            <label><input type="radio" name="parafusos" value="Não" onclick="toggleObservacao(this,true)"> Não</label>
+
+            <div class="campo-observacao">
+                <label><strong>Relate o problema:</strong></label><br>
+                <textarea name="observacao_parafusos" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+            </div>
         </li>
         <li>
-            <span>PassaFio</span>
-            <label><input type="radio" name="passafio" value="Sim"> Sim</label>
-            <label><input type="radio" name="passafio" value="Não"> Não</label>
+            <span>Passa Fio</span>
+            <label><input type="radio" name="passafio" value="Sim" onclick="toggleObservacao(this,false)"> Sim</label>
+            <label><input type="radio" name="passafio" value="Não" onclick="toggleObservacao(this,true)"> Não</label>
+
+            <div class="campo-observacao">
+                <label><strong>Relate o problema:</strong></label><br>
+                <textarea name="observacao_passafio" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+            </div>
         </li>
     </ul>
     <!-- Botão para disparar o salvamento via JS futuramente -->
