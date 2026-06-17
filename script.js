@@ -1,42 +1,43 @@
 // ==========================================================
-// 1. INICIALIZAÇÃO E CONTROLE DE LOGIN (NETLIFY IDENTITY)
+// CONTROLADOR DE LOGIN CONECTADO AO NETLIFY IDENTITY
 // ==========================================================
-// Garante que o motor do Netlify existe antes de iniciar
 if (typeof netlifyIdentity !== 'undefined') {
     netlifyIdentity.init();
 
     const usuarioAtual = netlifyIdentity.currentUser();
     const telaLogin = document.getElementById('tela-login');
 
+    // Se não estiver logado no Netlify, força a abertura do modal cinza
     if (!usuarioAtual) {
-        netlifyIdentity.open(); // Abre a caixinha do Netlify
+        netlifyIdentity.open(); 
         if (telaLogin) telaLogin.style.display = 'block'; 
     } else {
+        // Se já estiver logado, esconde o fundo antigo e configura o nome para o PDF
         if (telaLogin) telaLogin.style.display = 'none';
         configurarNomeTecnico(usuarioAtual.email);
     }
 
-    // Ouvintes de eventos do Netlify
+    // Evento disparado quando o funcionário faz login
     netlifyIdentity.on('login', (user) => {
-        console.log('Funcionário logado:', user.email);
         netlifyIdentity.close(); 
         if (telaLogin) telaLogin.style.display = 'none'; 
         configurarNomeTecnico(user.email);
     });
 
+    // Evento disparado quando desloga
     netlifyIdentity.on('logout', () => {
         sessionStorage.clear();
         window.location.reload(); 
     });
-} else {
-    console.error("Erro: A biblioteca do Netlify Identity não foi carregada no HTML.");
 }
 
+// Transforma o e-mail do Netlify no nome do relatório (ex: mateus.silva@gmail.com -> MATEUS SILVA)
 function configurarNomeTecnico(email) {
     if (!email) return;
     let nomeTratado = email.split('@')[0].replace('.', ' ').toUpperCase();
     sessionStorage.setItem('usuarioLogado', nomeTratado);
 }
+
 // ==========================================================
 // FUNÇÃO GENÉRICA PARA ABRIR / FECHAR OS CHECKLISTS
 // ==========================================================
