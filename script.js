@@ -114,14 +114,37 @@ function gerenciarSalvamento(idBotaoSalvar, idConfigSecao, chaveArmazenamento) {
     });
 }
 
-function imprimirChecklist() {
-    document.body.classList.add('imprimir-apenas-checklist');
-    window.print();
-}
+function imprimirChecklist(linkWhatsapp) {
 
-window.addEventListener('afterprint', () => {
-    document.body.classList.remove('imprimir-apenas-checklist');
-});
+    const activeChecklist = document.querySelector('.secao-checklist.ativo');
+
+    if (!activeChecklist) {
+        alert('Nenhum checklist aberto');
+        return;
+    }
+
+    const imagemAtiva = activeChecklist.querySelector(
+        '.imagem-factor125, .imagem-crosser150, .imagem-equipamentoscheck'
+    );
+
+    if (imagemAtiva) {
+        imagemAtiva.classList.add('impressao-ativa');
+    }
+
+    window.print();
+
+    setTimeout(() => {
+
+        if (imagemAtiva) {
+            imagemAtiva.classList.remove('impressao-ativa');
+        }
+
+        if (linkWhatsapp) {
+            window.open(linkWhatsapp, '_blank');
+        }
+
+    }, 2000);
+}
 // Configuração do salvamento independente para cada botão
 gerenciarSalvamento('btnSalvarEquipamentos', 'checklist-equipamentos', 'dadosEquipamentos');
 gerenciarSalvamento('btnSalvarCrosser', 'checklist-motocrosser', 'dadosCrosser');
@@ -135,22 +158,3 @@ function toggleObservacao(radioEl, exibir) {
     if (!caixa) return;
     caixa.style.display = exibir ? 'block' : 'none';
 }
-// 1. Inicializa o motor de login do Netlify
-netlifyIdentity.init();
-
-// 2. Verifica se o funcionário já está logado. Se não estiver, abre a caixinha
-const usuarioAtual = netlifyIdentity.currentUser();
-if (!usuarioAtual) {
-    netlifyIdentity.open(); 
-}
-
-// 3. O que acontece quando o funcionário digita o login correto
-netlifyIdentity.on('login', (user) => {
-    console.log('Funcionário logado:', user.email);
-    netlifyIdentity.close(); // Fecha a caixinha de login e libera o site
-});
-
-// 4. O que acontece se o funcionário deslogar
-netlifyIdentity.on('logout', () => {
-    window.location.reload(); // Recarrega a página para travar a tela de novo
-});

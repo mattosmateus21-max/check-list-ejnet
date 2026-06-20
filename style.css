@@ -31,6 +31,15 @@ footer {
     box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1);
 }
 
+.footer-link {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-weight: bold;
+}
+.footer-link:hover {
+    text-decoration: underline; /* O sublinhado só aparece de forma elegante ao passar o mouse */
+    opacity: 0.9;
+}
 /* Estilo do botão*/
 .btn-equipamentos{
     background-color: #007bff;
@@ -42,7 +51,6 @@ footer {
     border-radius: 5px;
     font-weight: bold;
     transition: background-color 0.2s ease;
-    width: 150px;
 }
 .btn-equipamentos:hover {
     background-color: #0056b3;
@@ -112,60 +120,83 @@ footer {
     max-width: 100%;
     box-shadow: none;
 }
-.secaochecklist input {
+.secao-checklist input {
     margin-right: 10px;
     cursor: pointer;
 }
-.secaochecklist label {
+.secao-checklist label {
     cursor: pointer;
 }
 /* Esconde elementos indesejados no PDF final */
 @media print {
-    /* 1. Força máxima para cores de fundo no PC e Mobile */
-    * {
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
+
+    @page {
+        size: auto;
+        margin: 10mm;
     }
 
-    /* 2. Força especificamente elementos com a cor laranja */
-    header, .Info-impressao {
-        background-color: #f36804 !important;
-        color: white !important;
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
+    html,
+    body {
+        width: auto !important;
+        min-height: auto !important;
         margin: 0 !important;
-        padding: 10px !important;
+        padding: 0 !important;
+    }
+
+    * {
+        -webkit-print-color-adjust: exact !important;  /* Navegadores Webkit/Chrome */
+        print-color-adjust: exact !important;          /* Versão padrão intermediária */
+        color-adjust: exact !important;                /* Versão mais recente */
     }
     
-    /* Esconde o que não deve ir para o PDF */
-    #tela-login, .btn-motocrosser, .btn-equipamentos, .btn-salvar, .btn-motofactor, .imagen-crosser, header, footer {
+    header,
+    footer,
+    #tela-login,
+    .btn-motocrosser,
+    .btn-motofactor,
+    .btn-equipamentos,
+    .btn-salvar,
+    .imagem-factor,
+    .imagem-crosser,
+    .imagem-equipamentos {
         display: none !important;
     }
+
     .secao-checklist {
+        display: none !important;
+    }
+
+    .secao-checklist.ativo {
+        display: block !important;
         width: 100% !important;
         max-width: 100% !important;
-        box-shadow: none !important;
+        border: none !important;
+        margin: 0 !important;
         padding: 10px !important;
-        page-break-after: auto !important;
         page-break-inside: avoid !important;
+        break-inside: avoid !important;
     }
 
-    body {
-        min-height: auto !important;
+    .secao-checklist ul,
+    .secao-checklist li {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+
+    .Info-impressao {
         display: block !important;
+        background: #f36804 !important;
+        color: #fff !important;
+        padding: 10px !important;
+        margin-bottom: 15px !important;
     }
 
-    footer {
-        position: fixed !important;
-        bottom: 0 !important;
-        left: 0 !important;
-        right: 0 !important;
+    .imagem-factor125.impressao-ativa,
+    .imagem-crosser150.impressao-ativa,
+    .imagem-equipamentoscheck.impressao-ativa {
+        display: block !important;
         width: 100% !important;
-        background-color: #f36804 !important;
-        color: white !important;
-        padding: 10px 0 !important;
-        page-break-after: avoid !important;
-        page-break-inside: avoid !important;
+        height: auto !important;
     }
 }
 @media only screen and (min-width: 200px) {
@@ -195,40 +226,33 @@ footer {
 }
 
 /* Esconde as informações de impressão na tela normal se preferir, ou deixe visível */
-.Info-impressao {
-    margin-bottom: 15px;
-    padding: 10px;
-    background-color: #f36804 !important;
-    color: #333;
-    border-radius: 4px;
-}
-.imagen-crosser {
+
+.imagem-crosser {
     max-width: 100%;
     display: block;
     height: auto;
 }
-.imagen-factor {
+.imagem-factor {
     max-width: 100%;
     display: block; /* mostrar a imagem principal na tela */
     height: auto;
-}
-
-/* Mostrar a imagem interna do checklist apenas durante a impressão
-   quando o script adicionar a classe que ativa a impressão da seção */
-@media print {
-    body.imprimir-apenas-checklist .imagem-factor125 .imagem-crosser150 {
-        display: block !important;
-        max-width: 100% !important;
-        height: auto !important;
-    }
 }
 .imagem-crosser150 {
     width: 100%;
     display: none;
 }
-.imagem-factor125{
+.imagem-factor125 {
     width: 100%;
     display: none; /* ocultar dentro do checklist na tela */
+}
+.imagem-equipamentos {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+.imagem-equipamentoscheck {
+    width: 100%;
+    display: none;
 }
 .campo-observacao {
     display: none;
