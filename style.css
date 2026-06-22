@@ -85,6 +85,16 @@ footer {
     background-color: #0d150f;
 }
 
+.btn-salvar {
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: #f36804;
+    color: white;
+    transition: background-color 0.2s ease;
+    border: none;
+}
+
 /*Seção do checklist - Escondida por padrão*/
 .secao-checklist {
     display: none;
@@ -257,6 +267,18 @@ footer {
 .campo-observacao {
     display: none;
     margin-bottom: 15px;
+}
+.campo-observacao textarea {
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 45px;
+    resize: none;
+    overflow: hidden;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+    font-size: 14px;
 }
 /* O container precisa ser relative para que o texto não suma da tela */
 .container-imagem {

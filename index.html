@@ -7,6 +7,7 @@
     <title>Checklist</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="manifest.json">
 </head>
 <body>
     <div id="tela-login" class="area-login">
@@ -467,5 +468,15 @@
    </div>
    <footer>&copy; 2026 EjNet LTDA. Todos os direitos reservados. | Desenvolvido por <a href="https://www.linkedin.com/in/cleberson-matos-590642368" class="footer-link" target="_blank" rel="noopener noreferrer">Cleberson Matos</a></footer>
    <script src="script.js" defer></script>
+   <script>
+     // Registra o Service Worker para funcionar offline
+     if ('serviceWorker' in navigator) {
+       navigator.serviceWorker.register('sw.js').then(reg => {
+         console.log('✓ Service Worker registrado com sucesso', reg);
+       }).catch(err => {
+         console.log('✗ Erro ao registrar Service Worker:', err);
+       });
+     }
+   </script>
 </body>
 </html>

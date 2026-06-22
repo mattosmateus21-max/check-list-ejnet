@@ -1,0 +1,20 @@
+{
+  "short_name": "EjNet Checklist",
+  "name": "Checklist EjNet",
+  "icons": [
+    {
+      "src": "imagens/logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "imagens/logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/index.html",
+  "background_color": "#FF6B00",
+  "display": "standalone",
+  "orientation": "portrait"
+}

@@ -110,7 +110,7 @@ function gerenciarSalvamento(idBotaoSalvar, idConfigSecao, chaveArmazenamento) {
         // 3. Aguarda 10 segundos para dar tempo do sistema fechar a janela de impressão e joga pro WhatsApp
         setTimeout(() => {
             window.location.href = linkWhatsapp;
-        }, 10000); // Aumentei para 10 segundos para garantir que o PDF seja gerado e a janela de impressão seja fechada
+        }, 20000); // Aumentei para 15 segundos para garantir que o PDF seja gerado e a janela de impressão seja fechada
     });
 }
 
@@ -143,12 +143,25 @@ function imprimirChecklist(linkWhatsapp) {
             window.open(linkWhatsapp, '_blank');
         }
 
-    }, 2000);
+    }, 15000);
 }
 // Configuração do salvamento independente para cada botão
 gerenciarSalvamento('btnSalvarEquipamentos', 'checklist-equipamentos', 'dadosEquipamentos');
 gerenciarSalvamento('btnSalvarCrosser', 'checklist-motocrosser', 'dadosCrosser');
 gerenciarSalvamento('btnSalvarFactor', 'checklist-motofactor', 'dadosFactor');
+
+function ajustarAlturaTextarea(textarea) {
+    if (!textarea) return;
+    textarea.style.height = 'auto';
+    textarea.style.height = `${textarea.scrollHeight}px`;
+}
+
+function ativarAjusteAutomatico() {
+    document.querySelectorAll('.campo-observacao textarea').forEach(textarea => {
+        textarea.addEventListener('input', () => ajustarAlturaTextarea(textarea));
+        ajustarAlturaTextarea(textarea);
+    });
+}
 
 function toggleObservacao(radioEl, exibir) {
     if (!radioEl) return;
@@ -157,4 +170,18 @@ function toggleObservacao(radioEl, exibir) {
     var caixa = li.querySelector('.campo-observacao');
     if (!caixa) return;
     caixa.style.display = exibir ? 'block' : 'none';
+    var textarea = caixa.querySelector('textarea');
+    if (exibir) {
+        ajustarAlturaTextarea(textarea);
+    }
 }
+
+ativarAjusteAutomatico();
+
+// Registro do Service Worker para o PWA funcionar
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js')
+    .then(() => console.log('PWA Pronto para instalação!'))
+    .catch(err => console.log('Erro no PWA:', err));
+}
+//teste//
