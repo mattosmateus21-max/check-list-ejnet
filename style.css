@@ -124,18 +124,28 @@ footer {
 }
 
 .secao-checklist li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     margin-bottom: 5px;
-    font-size: 16px;
+    font-size: 17px;
     width: 100%;
     max-width: 100%;
     box-shadow: none;
 }
-.secao-checklist input {
-    margin-right: 10px;
+.secao-checklist li span {
+    min-width: 115px;
+    text-align: left;
+}
+.secao-checklist input[type="radio"] {
+    margin: 0;
     cursor: pointer;
 }
 .secao-checklist label {
     cursor: pointer;
+    margin-right: 12px;
 }
 /* Esconde elementos indesejados no PDF final */
 @media print {

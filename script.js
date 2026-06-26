@@ -102,15 +102,20 @@ function gerenciarSalvamento(idBotaoSalvar, idConfigSecao, chaveArmazenamento) {
         // ==========================================================
         imprimirChecklist();
 
-        // 2. Configura o WhatsApp
-        const numeroWhatsapp = "5587991683831"; // <-- Substitua pelo seu número com DDD
-        const textoMensagem = `Olá! Segue o Checklist (${idConfigSecao}) preenchido por *${tecnico}* em ${dataFormatada} às ${horaFormatada}. Já gerei o PDF pelo sistema.`;
-        const linkWhatsapp = `https://wa.me/${numeroWhatsapp}?text=${encodeURIComponent(textoMensagem)}`;
+// 2. Configura o WhatsApp (SEM o número fixo)
+const textoMensagem = `Olá! Segue o Checklist (${idConfigSecao}) preenchido por *${tecnico}* em ${dataFormatada} às ${horaFormatada}. Já gerei o PDF pelo sistema.`;
 
-        // 3. Aguarda 10 segundos para dar tempo do sistema fechar a janela de impressão e joga pro WhatsApp
-        setTimeout(() => {
-            window.location.href = linkWhatsapp;
-        }, 20000); // Aumentei para 15 segundos para garantir que o PDF seja gerado e a janela de impressão seja fechada
+// 💡 A mudança acontece aqui: ao invés de https://wa.me/numero?text=, usamos https://wa.me/?text=
+const linkWhatsapp = `https://wa.me/?text=${encodeURIComponent(textoMensagem)}`;
+
+// 3. Aguarda 12 segundos para dar tempo do sistema fechar a janela de impressão e joga pro WhatsApp
+setTimeout(() => {
+    // Redireciona o usuário para a tela de escolha de contatos/grupos do WhatsApp
+    window.location.href = linkWhatsapp; 
+    
+    // Obs: Se quiser que o sistema não saia da página atual, 
+    // você pode trocar a linha acima por: window.open(linkWhatsapp, '_blank');
+}, 12000); // Aumentei para 12 segundos para garantir que o PDF seja gerado e a janela de impressão seja fechada
     });
 }
 
@@ -143,7 +148,7 @@ function imprimirChecklist(linkWhatsapp) {
             window.open(linkWhatsapp, '_blank');
         }
 
-    }, 15000);
+    }, 10000);
 }
 // Configuração do salvamento independente para cada botão
 gerenciarSalvamento('btnSalvarEquipamentos', 'checklist-equipamentos', 'dadosEquipamentos');

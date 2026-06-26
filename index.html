@@ -35,23 +35,58 @@
     </div>
     <ul>
         <li>
-            <span>Óleo</span>
-            <input type="radio" id="crosser-oleo-sim" name="oleo_crosser" value="Sim" onclick="toggleObservacao(this,false)">
-            <label for="crosser-oleo-sim">Sim</label>
-            <input type="radio" id="crosser-oleo-nao" name="oleo_crosser" value="Não" onclick="toggleObservacao(this,true)">
-            <label for="crosser-oleo-nao">Não</label>
+            <span>Buzina</span>
+            <input type="radio" id="crosser-buzina-conforme" name="buzina_crosser" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="crosser-buzina-Conforme">Conforme</label>
+            <input type="radio" id="crosser-buzina-n/c" name="buzina_crosser" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="crosser-buzina-n/c">N/C</label>
 
             <div class="campo-observacao">
-                <label for="obs-oleo-crosser"><strong>Relate o problema:</strong></label><br>
-                <textarea id="obs-oleo-crosser" name="observacao_oleo_crosser" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+                <label for="obs-buzina-crosser"><strong>Relate o problema:</strong></label><br>
+                <textarea id="obs-buzina-crosser" name="observacao_buzina_crosser" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
             </div>
         </li>
         <li>
+           <span>Capa</span>
+            <input type="radio" id="crosser-capa-conforme" name="capa_crosser" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="crosser-capa-conforme">Conforme</label>
+            <input type="radio" id="crosser-capa-n/c" name="capa_crosser" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="crosser-capa-n/c">N/C</label>
+
+            <div class="campo-observacao">
+                <label for="obs-capa-crosser"><strong>Relate o problema:</strong></label><br>
+                <textarea id="obs-capa-crosser" name="observacao_capa_crosser" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+            </div>
+        </li>
+        <li>
+             <span>Capacete</span>
+            <input type="radio" id="crosser-capacete-conforme" name="capacete_crosser" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="crosser-capacete-conforme">Conforme</label>
+            <input type="radio" id="crosser-capacete-n/c" name="capacete_crosser" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="crosser-capacete-n/c">N/C</label>
+
+            <div class="campo-observacao">
+                <label for="obs-capacete-crosser"><strong>Relate o problema:</strong></label><br>
+                <textarea id="obs-capacete-crosser" name="observacao_capacete_crosser" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+            </div>
+        </li>
+         <li>
+             <span>Carenagem</span>
+            <input type="radio" id="crosser-carenagem-conforme" name="carenagem_crosser" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="crosser-carenagem-conforme">Conforme</label>
+            <input type="radio" id="crosser-carenagem-n/c" name="carenagem_crosser" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="crosser-carenagem-n/c">N/C</label>
+
+            <div class="campo-observacao">
+                <label for="obs-carenagem-crosser"><strong>Relate o problema:</strong></label><br>
+                <textarea id="obs-carenagem-crosser" name="observacao_carenagem_crosser" rows="1" cols="50" placeholder="Especifique riscos, quebras, amassados ou peças soltas..."></textarea>
+            </div>
+        <li>
             <span>Freios</span>
-            <input type="radio" id="crosser-freios-sim" name="freios_crosser" value="Sim" onclick="toggleObservacao(this,false)">
-            <label for="crosser-freios-sim">Sim</label>
-            <input type="radio" id="crosser-freios-nao" name="freios_crosser" value="Não" onclick="toggleObservacao(this,true)">
-            <label for="crosser-freios-nao">Não</label>
+            <input type="radio" id="crosser-freios-conforme" name="freios_crosser" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="crosser-freios-conforme">Conforme</label>
+            <input type="radio" id="crosser-freios-n/c" name="freios_crosser" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="crosser-freios-n/c">N/C</label>
 
             <div class="campo-observacao">
                 <label for="obs-freios-crosser"><strong>Relate o problema:</strong></label><br>
@@ -59,11 +94,23 @@
             </div>
         </li>
         <li>
+            <span>Óleo</span>
+            <input type="radio" id="crosser-oleo-conforme" name="oleo_crosser" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="crosser-oleo-conforme">Conforme</label>
+            <input type="radio" id="crosser-oleo-n/c" name="oleo_crosser" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="crosser-oleo-n/c">N/C</label>
+
+            <div class="campo-observacao">
+                <label for="obs-oleo-crosser"><strong>Relate o problema:</strong></label><br>
+                <textarea id="obs-oleo-crosser" name="observacao_oleo_crosser" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+            </div>
+        </li>
+        <li>
             <span>Pneus</span>
-            <input type="radio" id="crosser-pneus-sim" name="pneus_crosser" value="Sim" onclick="toggleObservacao(this,false)">
-            <label for="crosser-pneus-sim">Sim</label>
-            <input type="radio" id="crosser-pneus-nao" name="pneus_crosser" value="Não" onclick="toggleObservacao(this,true)">
-            <label for="crosser-pneus-nao">Não</label>
+            <input type="radio" id="crosser-pneus-conforme" name="pneus_crosser" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="crosser-pneus-conforme">Conforme</label>
+            <input type="radio" id="crosser-pneus-n/c" name="pneus_crosser" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="crosser-pneus-n/c">N/C</label>
 
             <div class="campo-observacao">
                 <label for="obs-pneus-crosser"><strong>Relate o problema:</strong></label><br>
@@ -71,23 +118,11 @@
             </div>
         </li>
         <li>
-            <span>Transmissão</span>
-            <input type="radio" id="crosser-transmissao-sim" name="transmissao_crosser" value="Sim" onclick="toggleObservacao(this,false)">
-            <label for="crosser-transmissao-sim">Sim</label>
-            <input type="radio" id="crosser-transmissao-nao" name="transmissao_crosser" value="Não" onclick="toggleObservacao(this,true)">
-            <label for="crosser-transmissao-nao">Não</label>
-
-            <div class="campo-observacao">
-                <label for="obs-transmissao-crosser"><strong>Relate o problema:</strong></label><br>
-                <textarea id="obs-transmissao-crosser" name="observacao_transmissao_crosser" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
-            </div>
-        </li>
-        <li>
             <span>Retrovisores</span>
-            <input type="radio" id="crosser-retrovisores-sim" name="retrovisores_crosser" value="Sim" onclick="toggleObservacao(this,false)">
-            <label for="crosser-retrovisores-sim">Sim</label>
-            <input type="radio" id="crosser-retrovisores-nao" name="retrovisores_crosser" value="Não" onclick="toggleObservacao(this,true)">
-            <label for="crosser-retrovisores-nao">Não</label>
+            <input type="radio" id="crosser-retrovisores-conforme" name="retrovisores_crosser" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="crosser-retrovisores-conforme">Conforme</label>
+            <input type="radio" id="crosser-retrovisores-n/c" name="retrovisores_crosser" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="crosser-retrovisores-n/c">N/C</label>
 
             <div class="campo-observacao">
                 <label for="obs-retrovisores-crosser"><strong>Relate o problema:</strong></label><br>
@@ -96,10 +131,10 @@
         </li>
         <li>
             <span>Setas</span>
-            <input type="radio" id="crosser-setas-sim" name="setas_crosser" value="Sim" onclick="toggleObservacao(this,false)">
-            <label for="crosser-setas-sim">Sim</label>
-            <input type="radio" id="crosser-setas-nao" name="setas_crosser" value="Não" onclick="toggleObservacao(this,true)">
-            <label for="crosser-setas-nao">Não</label>
+            <input type="radio" id="crosser-setas-conforme" name="setas_crosser" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="crosser-setas-conforme">Conforme</label>
+            <input type="radio" id="crosser-setas-n/c" name="setas_crosser" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="crosser-setas-n/c">N/C</label>
 
             <div class="campo-observacao">
                 <label for="obs-setas-crosser"><strong>Relate o problema:</strong></label><br>
@@ -107,39 +142,15 @@
             </div>
         </li>
         <li>
-            <span>Buzina</span>
-            <input type="radio" id="crosser-buzina-sim" name="buzina_crosser" value="Sim" onclick="toggleObservacao(this,false)">
-            <label for="crosser-buzina-sim">Sim</label>
-            <input type="radio" id="crosser-buzina-nao" name="buzina_crosser" value="Não" onclick="toggleObservacao(this,true)">
-            <label for="crosser-buzina-nao">Não</label>
+            <span>Transmissão</span>
+            <input type="radio" id="crosser-transmissao-conforme" name="transmissao_crosser" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="crosser-transmissao-conforme">Conforme</label>
+            <input type="radio" id="crosser-transmissao-n/c" name="transmissao_crosser" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="crosser-transmissao-n/c">N/C</label>
 
             <div class="campo-observacao">
-                <label for="obs-buzina-crosser"><strong>Relate o problema:</strong></label><br>
-                <textarea id="obs-buzina-crosser" name="observacao_buzina_crosser" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
-            </div>
-        </li>
-        <li>
-             <span>Capacete</span>
-            <input type="radio" id="crosser-capacete-sim" name="capacete_crosser" value="Sim" onclick="toggleObservacao(this,false)">
-            <label for="crosser-capacete-sim">Sim</label>
-            <input type="radio" id="crosser-capacete-nao" name="capacete_crosser" value="Não" onclick="toggleObservacao(this,true)">
-            <label for="crosser-capacete-nao">Não</label>
-
-            <div class="campo-observacao">
-                <label for="obs-capacete-crosser"><strong>Relate o problema:</strong></label><br>
-                <textarea id="obs-capacete-crosser" name="observacao_capacete_crosser" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
-            </div>
-        </li>
-        <li>
-           <span>Capa</span>
-            <input type="radio" id="crosser-capa-sim" name="capa_crosser" value="Sim" onclick="toggleObservacao(this,false)">
-            <label for="crosser-capa-sim">Sim</label>
-            <input type="radio" id="crosser-capa-nao" name="capa_crosser" value="Não" onclick="toggleObservacao(this,true)">
-            <label for="crosser-capa-nao">Não</label>
-
-            <div class="campo-observacao">
-                <label for="obs-capa-crosser"><strong>Relate o problema:</strong></label><br>
-                <textarea id="obs-capa-crosser" name="observacao_capa_crosser" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+                <label for="obs-transmissao-crosser"><strong>Relate o problema:</strong></label><br>
+                <textarea id="obs-transmissao-crosser" name="observacao_transmissao_crosser" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
             </div>
         </li>
     </ul>
@@ -159,23 +170,58 @@
     </div>
     <ul>
         <li>
-            <span>Óleo</span>
-            <input type="radio" id="factor-oleo-sim" name="oleo_factor" value="Sim" onclick="toggleObservacao(this,false)">
-            <label for="factor-oleo-sim">Sim</label>
-            <input type="radio" id="factor-oleo-nao" name="oleo_factor" value="Não" onclick="toggleObservacao(this,true)">
-            <label for="factor-oleo-nao">Não</label>
+            <span>Buzina</span>
+            <input type="radio" id="factor-buzina-conforme" name="buzina_factor" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="factor-buzina-conforme">Conforme</label>
+            <input type="radio" id="factor-buzina-n/c" name="buzina_factor" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="factor-buzina-n/c">N/C</label>
 
             <div class="campo-observacao">
-                <label for="obs-oleo-factor"><strong>Relate o problema:</strong></label><br>
-                <textarea id="obs-oleo-factor" name="observacao_oleo_factor" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+                <label for="obs-buzina-factor"><strong>Relate o problema:</strong></label><br>
+                <textarea id="obs-buzina-factor" name="observacao_buzina_factor" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
             </div>
         </li>
         <li>
+           <span>Capa</span>
+            <input type="radio" id="factor-capa-conforme" name="capa_factor" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="factor-capa-conforme">Conforme</label>
+            <input type="radio" id="factor-capa-n/c" name="capa_factor" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="factor-capa-n/c">N/C</label>
+
+            <div class="campo-observacao">
+                <label for="obs-capa-factor"><strong>Relate o problema:</strong></label><br>
+                <textarea id="obs-capa-factor" name="observacao_capa_factor" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+            </div>
+        </li>
+         <li>
+             <span>Capacete</span>
+            <input type="radio" id="factor-capacete-conforme" name="capacete_factor" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="factor-capacete-conforme">Conforme</label>
+            <input type="radio" id="factor-capacete-n/c" name="capacete_factor" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="factor-capacete-n/c">N/C</label>
+
+            <div class="campo-observacao">
+                <label for="obs-capacete-factor"><strong>Relate o problema:</strong></label><br>
+                <textarea id="obs-capacete-factor" name="observacao_capacete_factor" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+            </div>
+        </li>
+         <li>
+             <span>Carenagem</span>
+            <input type="radio" id="factor-carenagem-conforme" name="carenagem_factor" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="factor-carenagem-conforme">Conforme</label>
+            <input type="radio" id="factor-carenagem-n/c" name="carenagem_factor" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="factor-carenagem-n/c">N/C</label>
+
+            <div class="campo-observacao">
+                <label for="obs-carenagem-factor"><strong>Relate o problema:</strong></label><br>
+                <textarea id="obs-carenagem-factor" name="observacao_carenagem_factor" rows="1" cols="50" placeholder="Especifique riscos, quebras, amassados ou peças soltas..."></textarea>
+            </div>
+         <li>
             <span>Freios</span>
-            <input type="radio" id="factor-freios-sim" name="freios_factor" value="Sim" onclick="toggleObservacao(this,false)">
-            <label for="factor-freios-sim">Sim</label>
-            <input type="radio" id="factor-freios-nao" name="freios_factor" value="Não" onclick="toggleObservacao(this,true)">
-            <label for="factor-freios-nao">Não</label>
+            <input type="radio" id="factor-freios-conforme" name="freios_factor" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="factor-freios-conforme">Conforme</label>
+            <input type="radio" id="factor-freios-n/c" name="freios_factor" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="factor-freios-n/c">N/C</label>
 
             <div class="campo-observacao">
                 <label for="obs-freios-factor"><strong>Relate o problema:</strong></label><br>
@@ -183,11 +229,23 @@
             </div>
         </li>
         <li>
+            <span>Óleo</span>
+            <input type="radio" id="factor-oleo-conforme" name="oleo_factor" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="factor-oleo-conforme">Conforme</label>
+            <input type="radio" id="factor-oleo-n/c" name="oleo_factor" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="factor-oleo-n/c">N/C</label>
+
+            <div class="campo-observacao">
+                <label for="obs-oleo-factor"><strong>Relate o problema:</strong></label><br>
+                <textarea id="obs-oleo-factor" name="observacao_oleo_factor" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+            </div>
+        </li>
+        <li>
             <span>Pneus</span>
-            <input type="radio" id="factor-pneus-sim" name="pneus_factor" value="Sim" onclick="toggleObservacao(this,false)">
-            <label for="factor-pneus-sim">Sim</label>
-            <input type="radio" id="factor-pneus-nao" name="pneus_factor" value="Não" onclick="toggleObservacao(this,true)">
-            <label for="factor-pneus-nao">Não</label>
+            <input type="radio" id="factor-pneus-conforme" name="pneus_factor" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="factor-pneus-conforme">Conforme</label>
+            <input type="radio" id="factor-pneus-n/c" name="pneus_factor" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="factor-pneus-n/c">N/C</label>
 
             <div class="campo-observacao">
                 <label for="obs-pneus-factor"><strong>Relate o problema:</strong></label><br>
@@ -195,23 +253,11 @@
             </div>
         </li>
         <li>
-             <span>Transmissão</span>
-            <input type="radio" id="factor-transmissao-sim" name="transmissao_factor" value="Sim" onclick="toggleObservacao(this,false)">
-            <label for="factor-transmissao-sim">Sim</label>
-            <input type="radio" id="factor-transmissao-nao" name="transmissao_factor" value="Não" onclick="toggleObservacao(this,true)">
-            <label for="factor-transmissao-nao">Não</label>
-
-            <div class="campo-observacao">
-                <label for="obs-transmissao-factor"><strong>Relate o problema:</strong></label><br>
-                <textarea id="obs-transmissao-factor" name="observacao_transmissao_factor" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
-            </div>
-        </li>
-        <li>
            <span>Retrovisores</span>
-            <input type="radio" id="factor-retrovisores-sim" name="retrovisores_factor" value="Sim" onclick="toggleObservacao(this,false)">
-            <label for="factor-retrovisores-sim">Sim</label>
-            <input type="radio" id="factor-retrovisores-nao" name="retrovisores_factor" value="Não" onclick="toggleObservacao(this,true)">
-            <label for="factor-retrovisores-nao">Não</label>
+            <input type="radio" id="factor-retrovisores-conforme" name="retrovisores_factor" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="factor-retrovisores-conforme">Conforme</label>
+            <input type="radio" id="factor-retrovisores-n/c" name="retrovisores_factor" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="factor-retrovisores-n/c">N/C</label>
 
             <div class="campo-observacao">
                 <label for="obs-retrovisores-factor"><strong>Relate o problema:</strong></label><br>
@@ -220,10 +266,10 @@
         </li>
         <li>
             <span>Setas</span>
-            <input type="radio" id="factor-setas-sim" name="setas_factor" value="Sim" onclick="toggleObservacao(this,false)">
-            <label for="factor-setas-sim">Sim</label>
-            <input type="radio" id="factor-setas-nao" name="setas_factor" value="Não" onclick="toggleObservacao(this,true)">
-            <label for="factor-setas-nao">Não</label>
+            <input type="radio" id="factor-setas-conforme" name="setas_factor" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="factor-setas-conforme">Conforme</label>
+            <input type="radio" id="factor-setas-n/c" name="setas_factor" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="factor-setas-n/c">N/C</label>
 
             <div class="campo-observacao">
                 <label for="obs-setas-factor"><strong>Relate o problema:</strong></label><br>
@@ -231,39 +277,15 @@
             </div>
         </li>
         <li>
-            <span>Buzina</span>
-            <input type="radio" id="factor-buzina-sim" name="buzina_factor" value="Sim" onclick="toggleObservacao(this,false)">
-            <label for="factor-buzina-sim">Sim</label>
-            <input type="radio" id="factor-buzina-nao" name="buzina_factor" value="Não" onclick="toggleObservacao(this,true)">
-            <label for="factor-buzina-nao">Não</label>
+             <span>Transmissão</span>
+            <input type="radio" id="factor-transmissao-conforme" name="transmissao_factor" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="factor-transmissao-conforme">Conforme</label>
+            <input type="radio" id="factor-transmissao-n/c" name="transmissao_factor" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="factor-transmissao-n/c">N/C</label>
 
             <div class="campo-observacao">
-                <label for="obs-buzina-factor"><strong>Relate o problema:</strong></label><br>
-                <textarea id="obs-buzina-factor" name="observacao_buzina_factor" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
-            </div>
-        </li>
-        <li>
-             <span>Capacete</span>
-            <input type="radio" id="factor-capacete-sim" name="capacete_factor" value="Sim" onclick="toggleObservacao(this,false)">
-            <label for="factor-capacete-sim">Sim</label>
-            <input type="radio" id="factor-capacete-nao" name="capacete_factor" value="Não" onclick="toggleObservacao(this,true)">
-            <label for="factor-capacete-nao">Não</label>
-
-            <div class="campo-observacao">
-                <label for="obs-capacete-factor"><strong>Relate o problema:</strong></label><br>
-                <textarea id="obs-capacete-factor" name="observacao_capacete_factor" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
-            </div>
-        </li>
-        <li>
-           <span>Capa</span>
-            <input type="radio" id="factor-capa-sim" name="capa_factor" value="Sim" onclick="toggleObservacao(this,false)">
-            <label for="factor-capa-sim">Sim</label>
-            <input type="radio" id="factor-capa-nao" name="capa_factor" value="Não" onclick="toggleObservacao(this,true)">
-            <label for="factor-capa-nao">Não</label>
-
-            <div class="campo-observacao">
-                <label for="obs-capa-factor"><strong>Relate o problema:</strong></label><br>
-                <textarea id="obs-capa-factor" name="observacao_capa_factor" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+                <label for="obs-transmissao-factor"><strong>Relate o problema:</strong></label><br>
+                <textarea id="obs-transmissao-factor" name="observacao_transmissao_factor" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
             </div>
         </li>
     </ul>
@@ -284,10 +306,10 @@
     <ul>
         <li>
             <span>Arame</span>
-            <input type="radio" id="equipamentos-arame-sim" name="arame_equipamentos" value="Sim" onclick="toggleObservacao(this,false)">
-            <label for="equipamentos-arame-sim">Sim</label>
-            <input type="radio" id="equipamentos-arame-nao" name="arame_equipamentos" value="Não" onclick="toggleObservacao(this,true)">
-            <label for="equipamentos-arame-nao">Não</label>
+            <input type="radio" id="equipamentos-arame-conforme" name="arame_equipamentos" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="equipamentos-arame-conforme">Conforme</label>
+            <input type="radio" id="equipamentos-arame-n/c" name="arame_equipamentos" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="equipamentos-arame-n/c">N/C</label>
 
             <div class="campo-observacao">
                 <label for="obs-arame-equipamentos"><strong>Relate o problema:</strong></label><br>
@@ -296,10 +318,10 @@
         </li>
         <li>
             <span>Abraçadeiras</span>
-            <input type="radio" id="equipamentos-abracadeiras-sim" name="abracadeiras_equipamentos" value="Sim" onclick="toggleObservacao(this,false)">
-            <label for="equipamentos-abracadeiras-sim">Sim</label>
-            <input type="radio" id="equipamentos-abracadeiras-nao" name="abracadeiras_equipamentos" value="Não" onclick="toggleObservacao(this,true)">
-            <label for="equipamentos-abracadeiras-nao">Não</label>
+            <input type="radio" id="equipamentos-abracadeiras-conforme" name="abracadeiras_equipamentos" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="equipamentos-abracadeiras-conforme">Conforme</label>
+            <input type="radio" id="equipamentos-abracadeiras-n/c" name="abracadeiras_equipamentos" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="equipamentos-abracadeiras-n/c">N/C</label>
 
             <div class="campo-observacao">
                 <label for="obs-abracadeiras-equipamentos"><strong>Relate o problema:</strong></label><br>
@@ -308,10 +330,10 @@
         </li>
         <li>
              <span>Buchas</span>
-            <input type="radio" id="equipamentos-buchas-sim" name="buchas_equipamentos" value="Sim" onclick="toggleObservacao(this,false)">
-            <label for="equipamentos-buchas-sim">Sim</label>
-            <input type="radio" id="equipamentos-buchas-nao" name="buchas_equipamentos" value="Não" onclick="toggleObservacao(this,true)">
-            <label for="equipamentos-buchas-nao">Não</label>
+            <input type="radio" id="equipamentos-buchas-conforme" name="buchas_equipamentos" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="equipamentos-buchas-conforme">Conforme</label>
+            <input type="radio" id="equipamentos-buchas-n/c" name="buchas_equipamentos" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="equipamentos-buchas-n/c">N/C</label>
 
             <div class="campo-observacao">
                 <label for="obs-buchas-equipamentos"><strong>Relate o problema:</strong></label><br>
@@ -320,10 +342,10 @@
         </li>
         <li>
             <span>Cabo Drop</span>
-            <input type="radio" id="equipamentos-cabodrop-sim" name="cabodrop_equipamentos" value="Sim" onclick="toggleObservacao(this,false)">
-            <label for="equipamentos-cabodrop-sim">Sim</label>
-            <input type="radio" id="equipamentos-cabodrop-nao" name="cabodrop_equipamentos" value="Não" onclick="toggleObservacao(this,true)">
-            <label for="equipamentos-cabodrop-nao">Não</label>
+            <input type="radio" id="equipamentos-cabodrop-conforme" name="cabodrop_equipamentos" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="equipamentos-cabodrop-conforme">Conforme</label>
+            <input type="radio" id="equipamentos-cabodrop-n/c" name="cabodrop_equipamentos" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="equipamentos-cabodrop-n/c">N/C</label>
 
             <div class="campo-observacao">
                 <label for="obs-cabodrop-equipamentos"><strong>Relate o problema:</strong></label><br>
@@ -332,10 +354,10 @@
         </li>
         <li>
             <span>Cabo UTP</span>
-            <input type="radio" id="equipamentos-caboutp-sim" name="caboutp_equipamentos" value="Sim" onclick="toggleObservacao(this,false)">
-            <label for="equipamentos-caboutp-sim">Sim</label>
-            <input type="radio" id="equipamentos-caboutp-nao" name="caboutp_equipamentos" value="Não" onclick="toggleObservacao(this,true)">
-            <label for="equipamentos-caboutp-nao">Não</label>
+            <input type="radio" id="equipamentos-caboutp-conforme" name="caboutp_equipamentos" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="equipamentos-caboutp-conforme">Conforme</label>
+            <input type="radio" id="equipamentos-caboutp-n/c" name="caboutp_equipamentos" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="equipamentos-caboutp-n/c">N/C</label>
 
             <div class="campo-observacao">
                 <label for="obs-caboutp-equipamentos"><strong>Relate o problema:</strong></label><br>
@@ -343,35 +365,35 @@
             </div>
         </li>
         <li>
-            <span>Conectores APC</span>
-            <input type="radio" id="equipamentos-conectoresapc-sim" name="conectoresapc_equipamentos" value="Sim" onclick="toggleObservacao(this,false)">
-            <label for="equipamentos-conectoresapc-sim">Sim</label>
-            <input type="radio" id="equipamentos-conectoresapc-nao" name="conectoresapc_equipamentos" value="Não" onclick="toggleObservacao(this,true)">
-            <label for="equipamentos-conectoresapc-nao">Não</label>
+            <span>Conector APC</span>
+            <input type="radio" id="equipamentos-conectorapc-conforme" name="conectorapc_equipamentos" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="equipamentos-conectorapc-conforme">Conforme</label>
+            <input type="radio" id="equipamentos-conectorapc-n/c" name="conectorapc_equipamentos" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="equipamentos-conectorapc-n/c">N/C</label>
 
             <div class="campo-observacao">
-                <label for="obs-conectoresapc-equipamentos"><strong>Relate o problema:</strong></label><br>
-                <textarea id="obs-conectoresapc-equipamentos" name="observacao_conectoresapc_equipamentos" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+                <label for="obs-conectorapc-equipamentos"><strong>Relate o problema:</strong></label><br>
+                <textarea id="obs-conectorapc-equipamentos" name="observacao_conectorapc_equipamentos" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
             </div>
         </li>
         <li>
-           <span>Conectores RJ45</span>
-            <input type="radio" id="equipamentos-conectoresrj45-sim" name="conectoresrj45_equipamentos" value="Sim" onclick="toggleObservacao(this,false)">
-            <label for="equipamentos-conectoresrj45-sim">Sim</label>
-            <input type="radio" id="equipamentos-conectoresrj45-nao" name="conectoresrj45_equipamentos" value="Não" onclick="toggleObservacao(this,true)">
-            <label for="equipamentos-conectoresrj45-nao">Não</label>
+           <span>Conector RJ45</span>
+            <input type="radio" id="equipamentos-conectorrj45-conforme" name="conectorrj45_equipamentos" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="equipamentos-conectorrj45-conforme">Conforme</label>
+            <input type="radio" id="equipamentos-conectorrj45-n/c" name="conectorrj45_equipamentos" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="equipamentos-conectorrj45-n/c">N/C</label>
 
             <div class="campo-observacao">
-                <label for="obs-conectoresrj45-equipamentos"><strong>Relate o problema:</strong></label><br>
-                <textarea id="obs-conectoresrj45-equipamentos" name="observacao_conectoresrj45_equipamentos" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
+                <label for="obs-conectorrj45-equipamentos"><strong>Relate o problema:</strong></label><br>
+                <textarea id="obs-conectorrj45-equipamentos" name="observacao_conectorrj45_equipamentos" rows="1" cols="50" placeholder="Descreva o problema encontrado aqui..."></textarea>
             </div>
         </li>
         <li>
            <span>Chaves</span>
-            <input type="radio" id="equipamentos-chaves-sim" name="chaves_equipamentos" value="Sim" onclick="toggleObservacao(this,false)">
-            <label for="equipamentos-chaves-sim">Sim</label>
-            <input type="radio" id="equipamentos-chaves-nao" name="chaves_equipamentos" value="Não" onclick="toggleObservacao(this,true)">
-            <label for="equipamentos-chaves-nao">Não</label>
+            <input type="radio" id="equipamentos-chaves-conforme" name="chaves_equipamentos" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="equipamentos-chaves-conforme">Conforme</label>
+            <input type="radio" id="equipamentos-chaves-n/c" name="chaves_equipamentos" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="equipamentos-chaves-n/c">N/C</label>
 
             <div class="campo-observacao">
                 <label for="obs-chaves-equipamentos"><strong>Relate o problema:</strong></label><br>
@@ -380,10 +402,10 @@
         </li>
         <li>
            <span>Esticadores</span>
-            <input type="radio" id="equipamentos-esticadores-sim" name="esticadores_equipamentos" value="Sim" onclick="toggleObservacao(this,false)">
-            <label for="equipamentos-esticadores-sim">Sim</label>
-            <input type="radio" id="equipamentos-esticadores-nao" name="esticadores_equipamentos" value="Não" onclick="toggleObservacao(this,true)">
-            <label for="equipamentos-esticadores-nao">Não</label>
+            <input type="radio" id="equipamentos-esticadores-conforme" name="esticadores_equipamentos" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="equipamentos-esticadores-conforme">Conforme</label>
+            <input type="radio" id="equipamentos-esticadores-n/c" name="esticadores_equipamentos" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="equipamentos-esticadores-n/c">N/C</label>
 
             <div class="campo-observacao">
                 <label for="obs-esticadores-equipamentos"><strong>Relate o problema:</strong></label><br>
@@ -392,10 +414,10 @@
         </li>
         <li>
              <span>Extensão</span>
-            <input type="radio" id="equipamentos-extensao-sim" name="extensao_equipamentos" value="Sim" onclick="toggleObservacao(this,false)">
-            <label for="equipamentos-extensao-sim">Sim</label>
-            <input type="radio" id="equipamentos-extensao-nao" name="extensao_equipamentos" value="Não" onclick="toggleObservacao(this,true)">
-            <label for="equipamentos-extensao-nao">Não</label>
+            <input type="radio" id="equipamentos-extensao-conforme" name="extensao_equipamentos" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="equipamentos-extensao-conforme">Conforme</label>
+            <input type="radio" id="equipamentos-extensao-n/c" name="extensao_equipamentos" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="equipamentos-extensao-n/c">N/C</label>
 
             <div class="campo-observacao">
                 <label for="obs-extensao-equipamentos"><strong>Relate o problema:</strong></label><br>
@@ -404,10 +426,10 @@
         </li>
         <li>
              <span>Fita Isolante</span>
-            <input type="radio" id="equipamentos-fitaisolante-sim" name="fitaisolante_equipamentos" value="Sim" onclick="toggleObservacao(this,false)">
-            <label for="equipamentos-fitaisolante-sim">Sim</label>
-            <input type="radio" id="equipamentos-fitaisolante-nao" name="fitaisolante_equipamentos" value="Não" onclick="toggleObservacao(this,true)">
-            <label for="equipamentos-fitaisolante-nao">Não</label>
+            <input type="radio" id="equipamentos-fitaisolante-conforme" name="fitaisolante_equipamentos" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="equipamentos-fitaisolante-conforme">Conforme</label>
+            <input type="radio" id="equipamentos-fitaisolante-n/c" name="fitaisolante_equipamentos" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="equipamentos-fitaisolante-n/c">N/C</label>
 
             <div class="campo-observacao">
                 <label for="obs-fitaisolante-equipamentos"><strong>Relate o problema:</strong></label><br>
@@ -416,10 +438,10 @@
         </li>
         <li>
              <span>Fixa Fio</span>
-            <input type="radio" id="equipamentos-fixafio-sim" name="fixafio_equipamentos" value="Sim" onclick="toggleObservacao(this,false)">
-            <label for="equipamentos-fixafio-sim">Sim</label>
-            <input type="radio" id="equipamentos-fixafio-nao" name="fixafio_equipamentos" value="Não" onclick="toggleObservacao(this,true)">
-            <label for="equipamentos-fixafio-nao">Não</label>
+            <input type="radio" id="equipamentos-fixafio-conforme" name="fixafio_equipamentos" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="equipamentos-fixafio-conforme">Conforme</label>
+            <input type="radio" id="equipamentos-fixafio-n/c" name="fixafio_equipamentos" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="equipamentos-fixafio-n/c">N/C</label>
 
             <div class="campo-observacao">
                 <label for="obs-fixafio-equipamentos"><strong>Relate o problema:</strong></label><br>
@@ -428,10 +450,10 @@
         </li>
         <li>
            <span>Martelete</span>
-            <input type="radio" id="equipamentos-martelete-sim" name="martelete_equipamentos" value="Sim" onclick="toggleObservacao(this,false)">
-            <label for="equipamentos-martelete-sim">Sim</label>
-            <input type="radio" id="equipamentos-martelete-nao" name="martelete_equipamentos" value="Não" onclick="toggleObservacao(this,true)">
-            <label for="equipamentos-martelete-nao">Não</label>
+            <input type="radio" id="equipamentos-martelete-conforme" name="martelete_equipamentos" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="equipamentos-martelete-conforme">Conforme</label>
+            <input type="radio" id="equipamentos-martelete-n/c" name="martelete_equipamentos" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="equipamentos-martelete-n/c">N/C</label>
 
             <div class="campo-observacao">
                 <label for="obs-martelete-equipamentos"><strong>Relate o problema:</strong></label><br>
@@ -440,10 +462,10 @@
         </li>
         <li>
            <span>Parafuso</span>
-            <input type="radio" id="equipamentos-parafuso-sim" name="parafuso_equipamentos" value="Sim" onclick="toggleObservacao(this,false)">
-            <label for="equipamentos-parafuso-sim">Sim</label>
-            <input type="radio" id="equipamentos-parafuso-nao" name="parafuso_equipamentos" value="Não" onclick="toggleObservacao(this,true)">
-            <label for="equipamentos-parafuso-nao">Não</label>
+            <input type="radio" id="equipamentos-parafuso-conforme" name="parafuso_equipamentos" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="equipamentos-parafuso-conforme">Conforme</label>
+            <input type="radio" id="equipamentos-parafuso-n/c" name="parafuso_equipamentos" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="equipamentos-parafuso-n/c">N/C</label>
 
             <div class="campo-observacao">
                 <label for="obs-parafuso-equipamentos"><strong>Relate o problema:</strong></label><br>
@@ -452,10 +474,10 @@
         </li>
         <li>
              <span>Passa Fio</span>
-            <input type="radio" id="equipamentos-passafio-sim" name="passafio_equipamentos" value="Sim" onclick="toggleObservacao(this,false)">
-            <label for="equipamentos-passafio-sim">Sim</label>
-            <input type="radio" id="equipamentos-passafio-nao" name="passafio_equipamentos" value="Não" onclick="toggleObservacao(this,true)">
-            <label for="equipamentos-passafio-nao">Não</label>
+            <input type="radio" id="equipamentos-passafio-conforme" name="passafio_equipamentos" value="Conforme" onclick="toggleObservacao(this,false)">
+            <label for="equipamentos-passafio-conforme">Conforme</label>
+            <input type="radio" id="equipamentos-passafio-n/c" name="passafio_equipamentos" value="N/C" onclick="toggleObservacao(this,true)">
+            <label for="equipamentos-passafio-n/c">N/C</label>
 
             <div class="campo-observacao">
                 <label for="obs-passafio-equipamentos"><strong>Relate o problema:</strong></label><br>
